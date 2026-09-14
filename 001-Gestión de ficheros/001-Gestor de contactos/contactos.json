@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Pablo",
+        "apellidos": "Navarro Castro",
+        "telefono": "677889900"
+    },
+    {
+        "nombre": "Elena",
+        "apellidos": "Molina Ortiz",
+        "telefono": "688990011"
+    },
+    {
+        "nombre": "Javier",
+        "apellidos": "Delgado Romero",
+        "telefono": "699001122"
+    },
+    {
+        "nombre": "Carmen",
+        "apellidos": "Blanco Rubio",
+        "telefono": "611335577"
+    },
+    {
+        "nombre": "Hugo",
+        "apellidos": "Iglesias Marín",
+        "telefono": "622446688"
+    }
+]
