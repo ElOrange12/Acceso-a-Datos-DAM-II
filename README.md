@@ -1,3 +1,19 @@
+# 💾 Acceso a Datos (AD) - DAM
+
+![DAM](https://img.shields.io/badge/Ciclo-DAM-blue?style=flat-square)
+![Comunitat Valenciana](https://img.shields.io/badge/Currículo-Comunitat_Valenciana-orange?style=flat-square)
+
+Repositorio de proyectos, prácticas y apuntes del módulo **Acceso a Datos (AD)**, correspondiente al 2º curso del Ciclo Formativo de Grado Superior en **Desarrollo de Aplicaciones Multiplataforma (DAM)**. 
+
+Los contenidos y resultados de aprendizaje de este repositorio están estructurados de acuerdo con el currículo oficial establecido para la **Comunitat Valenciana** (Decreto 63/2012 del Consell, que desarrolla el Real Decreto 450/2010 a nivel autonómico).
+
+---
+
+## 📚 Resultados de Aprendizaje (RA)
+
+De acuerdo con la normativa vigente, el módulo se centra en conseguir que el alumno alcance los siguientes objetivos:
+
+| RA | Descripción | Estado |
 |:---:|---|:---:|
 | **RA1** | **Gestión de la información** en ficheros lógicos y físicos, utilizando clases estándar. | ⏳ Pendiente |
 | **RA2** | **Desarrollo de aplicaciones** que acceden a bases de datos relacionales (conectores y JDBC). | ⏳ Pendiente |
