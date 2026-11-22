@@ -1,0 +1,13 @@
+{
+  "name": "biblioteca-mongo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRUD de libros con Node.js y MongoDB remoto",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
