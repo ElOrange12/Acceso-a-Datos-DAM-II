@@ -1,0 +1,17 @@
+{
+  "name": "practica-biblioteca-mongodb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Práctica CRUD con MongoDB y Node.js",
+  "scripts": {
+    "conexion": "node conexion.js",
+    "listar": "node listar.js",
+    "insertar": "node insertar.js",
+    "buscar": "node buscar.js",
+    "prestar": "node prestar.js",
+    "estadisticas": "node estadisticas.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

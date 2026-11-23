@@ -1,0 +1,26 @@
+const { MongoClient } = require("mongodb");
+const cliente = new MongoClient("mongodb://127.0.0.1:27017");
+
+async function main() {
+  try {
+    await cliente.connect();
+    const libros = cliente.db("biblioteca").collection("libros");
+    const resultado = await libros.updateOne(
+      { titulo: "La sombra del viento" },
+      { $set: { disponible: false } },
+    );
+    console.log("Documentos modificados: " + resultado.modifiedCount);
+
+    console.log("Libros disponibles:");
+    const lista = await libros.find({ disponible: true }).toArray();
+    for (const libro of lista) {
+      console.log(libro.titulo);
+    }
+  } catch (error) {
+    console.log("Error: " + error.message);
+  } finally {
+    await cliente.close();
+  }
+}
+
+main();
