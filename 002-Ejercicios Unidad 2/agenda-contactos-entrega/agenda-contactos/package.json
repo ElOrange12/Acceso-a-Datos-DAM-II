@@ -1,0 +1,15 @@
+{
+  "name": "practica-crud-agenda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRUD de una agenda con MongoDB y Node.js",
+  "scripts": {
+    "crear": "node crear.js",
+    "leer": "node leer.js",
+    "actualizar": "node actualizar.js",
+    "borrar": "node borrar.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
