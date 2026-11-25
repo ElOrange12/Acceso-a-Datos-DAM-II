@@ -1,0 +1,124 @@
+EJERCICIO: Agenda de contactos: CRUD con MongoDB y Node.js
+Carpeta: ~/t2/agenda-contactos
+
+=== Instalación de dependencias (npm install)  (2026-11-25 12:22:01)
+$ npm install
+
+added 12 packages, and audited 13 packages in 504ms
+
+found 0 vulnerabilities
+[código de salida: 0]
+
+=== Parte A tal cual se entregó (guion original)  (2026-11-25 12:22:02)
+$ mongosh --file mongosh/parte-a.js
+TypeError: agenda.collection is not a function
+[código de salida: 1]
+
+=== Corrección aplicada al guion  (2026-11-25 12:22:02)
+$ diff mongosh/parte-a.js mongosh/parte-a.corregido.js
+4c4
+< const contactos = agenda.collection("contactos");
+---
+> const contactos = agenda.getCollection("contactos");
+[código de salida: 0]
+
+=== Parte A con el guion corregido  (2026-11-25 12:22:03)
+$ mongosh --file mongosh/parte-a.corregido.js
+Ejercicio 2 · Primer contacto:
+[
+  {
+    _id: ObjectId('6b06c4db4548e85aecffc9e8'),
+    nombre: 'Ana López',
+    telefono: '600111222',
+    ciudad: 'Valencia'
+  }
+]
+Ejercicio 4 · Total: 5
+Ejercicio 5 · Contactos de Valencia:
+[
+  {
+    _id: ObjectId('6b06c4db4548e85aecffc9e8'),
+    nombre: 'Ana López',
+    telefono: '600111222',
+    ciudad: 'Valencia'
+  },
+  {
+    _id: ObjectId('6b06c4db4548e85aecffc9ea'),
+    nombre: 'Marta Ruiz',
+    telefono: '600555666',
+    ciudad: 'Valencia'
+  }
+]
+[
+  {
+    nombre: 'Ana López',
+    telefono: '600111222'
+  },
+  {
+    nombre: 'Marta Ruiz',
+    telefono: '600555666'
+  }
+]
+Ejercicio 6 · Luis actualizado:
+{
+  _id: ObjectId('6b06c4db4548e85aecffc9e9'),
+  nombre: 'Luis Martín',
+  telefono: '611222333',
+  ciudad: 'Madrid'
+}
+Ejercicio 7 · Total tras borrar a Pedro: 4
+[
+  {
+    nombre: 'Ana López'
+  },
+  {
+    nombre: 'Luis Martín'
+  },
+  {
+    nombre: 'Marta Ruiz'
+  },
+  {
+    nombre: 'Lucía Sanz'
+  }
+]
+[código de salida: 0]
+
+=== Parte B: crear.js  (2026-11-25 12:22:03)
+$ node crear.js
+Contacto creado con id: 6b06c4dbcd40a762012990d5
+Ahora hay 5 contactos en la agenda.
+[código de salida: 0]
+
+=== Parte B: leer.js  (2026-11-25 12:22:03)
+$ node leer.js
+Lista de contactos:
+Ana López - 600111222 (Valencia)
+Luis Martín - 611222333 (Madrid)
+Marta Ruiz - 600555666 (Valencia)
+Lucía Sanz - 600999000 (Barcelona)
+Sara Díaz - 622444555 (Alicante)
+Total: 5 contactos
+[código de salida: 0]
+
+=== Parte B: actualizar.js  (2026-11-25 12:22:03)
+$ node actualizar.js
+Contactos modificados: 1
+Marta Ruiz ahora vive en: Castellón
+[código de salida: 0]
+
+=== Parte B: borrar.js  (2026-11-25 12:22:03)
+$ node borrar.js
+Contactos borrados: 1
+Quedan 4 contactos en la agenda.
+[código de salida: 0]
+
+=== Parte B: leer.js (estado final)  (2026-11-25 12:22:03)
+$ node leer.js
+Lista de contactos:
+Ana López - 600111222 (Valencia)
+Luis Martín - 611222333 (Madrid)
+Marta Ruiz - 600555666 (Castellón)
+Lucía Sanz - 600999000 (Barcelona)
+Total: 4 contactos
+[código de salida: 0]
+

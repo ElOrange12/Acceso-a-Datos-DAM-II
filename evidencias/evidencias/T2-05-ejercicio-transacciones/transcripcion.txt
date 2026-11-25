@@ -1,0 +1,37 @@
+EJERCICIO: Venta de entradas con saldo (transacciones)
+Carpeta: ~/t2/ejercicio-transacciones
+
+=== Preparación: preparar_taquilla.sql  (2026-11-25 12:21:31)
+$ mysql < preparar_taquilla.sql
+
+[código de salida: 0]
+
+=== Ejecución de taquilla.py  (2026-11-25 12:21:31)
+$ python taquilla.py
+Estado inicial:
+CLIENTES: [(1, 'Laura', 50), (2, 'Marcos', 15)]
+ENTRADAS: []
+
+Error: 1146 (42S02): Table 'taquilla.entrada' doesn't exist
+Después del intento sin transacción:
+CLIENTES: [(1, 'Laura', 30), (2, 'Marcos', 15)]
+ENTRADAS: []
+
+Compra realizada
+CLIENTES: [(1, 'Laura', 30), (2, 'Marcos', 15)]
+ENTRADAS: [(1, 1, 'Concierto')]
+
+Compra cancelada: saldo insuficiente
+CLIENTES: [(1, 'Laura', 30), (2, 'Marcos', 15)]
+ENTRADAS: [(1, 1, 'Concierto')]
+[código de salida: 0]
+
+=== Comprobación final en MySQL  (2026-11-25 12:21:31)
+$ mysql -e 'SELECT * FROM taquilla.clientes; SELECT * FROM taquilla.entradas;'
+id	nombre	saldo
+1	Laura	30
+2	Marcos	15
+id	cliente_id	evento
+1	1	Concierto
+[código de salida: 0]
+

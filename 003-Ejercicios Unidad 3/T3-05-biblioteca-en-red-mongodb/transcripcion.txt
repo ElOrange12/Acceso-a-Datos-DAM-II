@@ -1,0 +1,46 @@
+EJERCICIO: Biblioteca en red: MongoDB desde Node.js (sin Docker)
+Carpeta: ~/t3/biblioteca-en-red/mongo
+
+=== Instalación de dependencias (npm install)  (2026-11-25 12:22:08)
+$ npm install
+
+added 12 packages, and audited 13 packages in 532ms
+
+found 0 vulnerabilities
+[código de salida: 0]
+
+=== Ejecución de la aplicación (npm start)  (2026-11-25 12:22:08)
+$ IP_VM=127.0.0.1 npm start
+
+> biblioteca-mongo@1.0.0 start
+> node app.js
+
+Conectado a MongoDB en 127.0.0.1
+Libros guardados: 3
+Libros anteriores a 1900:
+- El Quijote (1605) de Cervantes
+- La Regenta (1884) de Clarín
+Actualizado el autor de La Regenta
+Borrado el libro Nada
+Quedan 2 libros en la colección
+[código de salida: 0]
+
+=== Comprobación en la base de datos  (2026-11-25 12:22:09)
+$ mongosh biblioteca --quiet --eval "db.libros.find()"
+[
+  {
+    _id: ObjectId('6b06c4e02caa6c9919eb1d38'),
+    titulo: 'El Quijote',
+    autor: 'Cervantes',
+    anio: 1605,
+    generos: [ 'novela', 'aventuras' ]
+  },
+  {
+    _id: ObjectId('6b06c4e02caa6c9919eb1d39'),
+    titulo: 'La Regenta',
+    autor: 'Leopoldo Alas (Clarín)',
+    anio: 1884
+  }
+]
+[código de salida: 0]
+

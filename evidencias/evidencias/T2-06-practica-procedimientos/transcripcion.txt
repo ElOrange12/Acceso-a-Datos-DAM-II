@@ -1,0 +1,55 @@
+EJERCICIO: Biblioteca con procedimientos almacenados y Python
+Carpeta: ~/t2/practica-procedimientos
+
+=== Preparación: preparar_biblioteca.sql  (2026-11-25 12:21:31)
+$ mysql < preparar_biblioteca.sql
+
+[código de salida: 0]
+
+=== Procedimientos creados  (2026-11-25 12:21:31)
+$ mysql -e "SHOW PROCEDURE STATUS WHERE Db='biblioteca'" | cut -f2,3
+Name	Type
+buscar_por_autor	PROCEDURE
+contar_libros	PROCEDURE
+listar_libros	PROCEDURE
+prestar_libro	PROCEDURE
+[código de salida: 0]
+
+=== Ejecución de practica.py  (2026-11-25 12:21:32)
+$ python practica.py
+=== Listado de libros ===
+1 - Don Quijote de la Mancha (Miguel de Cervantes) - 3 ejemplares
+2 - Novelas ejemplares (Miguel de Cervantes) - 1 ejemplares
+3 - La casa de Bernarda Alba (Federico García Lorca) - 2 ejemplares
+4 - Romancero gitano (Federico García Lorca) - 0 ejemplares
+
+=== Libros de Federico García Lorca ===
+La casa de Bernarda Alba - 2 ejemplares
+Romancero gitano - 0 ejemplares
+
+=== Total de libros ===
+Hay 4 libros en la biblioteca
+
+=== Préstamo del libro 1 ===
+Préstamo registrado
+
+=== Préstamo del libro 4 ===
+Error: No quedan ejemplares
+
+=== Prueba de permisos ===
+Acceso denegado: SELECT command denied to user 'app_biblioteca'@'localhost' for table `biblioteca`.`libros`
+~/t2/practica-procedimientos/practica.py:16: DeprecationWarning: Call to deprecated function stored_results. Reason: The property counterpart 'stored_results' will be added in a future release, and this method will be removed.
+  for resultado in cursor.stored_results():
+~/t2/practica-procedimientos/practica.py:25: DeprecationWarning: Call to deprecated function stored_results. Reason: The property counterpart 'stored_results' will be added in a future release, and this method will be removed.
+  for resultado in cursor.stored_results():
+[código de salida: 0]
+
+=== Comprobación: ejemplares tras el préstamo  (2026-11-25 12:21:32)
+$ mysql -e 'SELECT id, titulo, ejemplares FROM biblioteca.libros'
+id	titulo	ejemplares
+1	Don Quijote de la Mancha	2
+2	Novelas ejemplares	1
+3	La casa de Bernarda Alba	2
+4	Romancero gitano	0
+[código de salida: 0]
+

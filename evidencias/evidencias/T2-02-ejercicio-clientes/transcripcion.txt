@@ -1,0 +1,52 @@
+EJERCICIO: Ejercicio de clientes (insertar, actualizar, eliminar)
+Carpeta: ~/t2/ejercicio-clientes
+
+=== Estado inicial de la tabla clientes  (2026-11-25 12:21:30)
+$ mysql -e 'SELECT * FROM accesoadatos2526.clientes'
+Identificador	nombre	apellidos	email
+1	Luis	Garcia Perez	luis@garciaperez.com
+2	Marta	Lopez Sanz	marta@lopezsanz.com
+3	Pedro	Gil Mora	pedro@gilmora.com
+[código de salida: 0]
+
+=== Ejercicio 4: insertar  (2026-11-25 12:21:30)
+$ python 004-insertar.py
+
+[código de salida: 0]
+
+=== Tabla tras insertar  (2026-11-25 12:21:30)
+$ mysql -e 'SELECT * FROM accesoadatos2526.clientes'
+Identificador	nombre	apellidos	email
+1	Luis	Garcia Perez	luis@garciaperez.com
+2	Marta	Lopez Sanz	marta@lopezsanz.com
+3	Pedro	Gil Mora	pedro@gilmora.com
+4	Ana	Martinez Ruiz	ana@martinezruiz.com
+[código de salida: 0]
+
+=== Ejercicio 5: actualizar  (2026-11-25 12:21:30)
+$ python 005-actualizar.py
+
+[código de salida: 0]
+
+=== Tabla tras actualizar  (2026-11-25 12:21:30)
+$ mysql -e 'SELECT * FROM accesoadatos2526.clientes'
+Identificador	nombre	apellidos	email
+1	Luis	Garcia Perez	luis@garciaperez.com
+2	Marta	Lopez Sanz	marta@lopezsanz.com
+3	Pedro	Gil Mora	pedro@gilmora.com
+4	Ana Maria	Martinez Ruiz	ana@martinezruiz.com
+[código de salida: 0]
+
+=== Ejercicio 6: eliminar  (2026-11-25 12:21:30)
+$ python 006-eliminar.py
+
+[código de salida: 0]
+
+=== Tabla tras eliminar  (2026-11-25 12:21:30)
+$ mysql -e 'SELECT * FROM accesoadatos2526.clientes'
+Identificador	nombre	apellidos	email
+1	Luis	Garcia Perez	luis@garciaperez.com
+2	Marta	Lopez Sanz	marta@lopezsanz.com
+3	Pedro	Gil Mora	pedro@gilmora.com
+[código de salida: 0]
+

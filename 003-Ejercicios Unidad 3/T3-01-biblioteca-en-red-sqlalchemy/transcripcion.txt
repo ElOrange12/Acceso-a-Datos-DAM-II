@@ -1,0 +1,42 @@
+EJERCICIO: Biblioteca en red: SQLAlchemy + MySQL (sin Docker)
+Carpeta: ~/t3/biblioteca-en-red/orm
+
+=== Ejecución de biblioteca_orm.py  (2026-11-25 12:21:32)
+$ IP_VM=127.0.0.1 python biblioteca_orm.py
+Tablas creadas en MySQL (127.0.0.1)
+Socios y libros guardados
+Préstamo registrado: El Quijote -> Ana Pons
+Libros de la biblioteca:
+- El Quijote (1605): prestado a Ana Pons
+- La Regenta (1884): disponible
+- Nada (1945): disponible
+Actualizado el autor de La Regenta
+Borrado el libro Nada. Quedan 2 libros en la tabla
+[código de salida: 0]
+
+=== Comprobación en MySQL: libros y socios  (2026-11-25 12:21:32)
+$ mysql -ualumno -palumno123 -h127.0.0.1 biblioteca -e 'SELECT * FROM libros; SELECT * FROM socios;'
+id	titulo	autor	anio	socio_id
+1	El Quijote	Cervantes	1605	1
+2	La Regenta	Leopoldo Alas (Clarín)	1884	NULL
+id	nombre
+1	Ana Pons
+2	Luis Mir
+[código de salida: 0]
+
+=== Ejecución de transaccion.py (rollback)  (2026-11-25 12:21:32)
+$ IP_VM=127.0.0.1 python transaccion.py
+Libros antes de la transacción: 2
+Error: un libro no tiene título.
+Se deshace toda la transacción (rollback).
+Libros después de la transacción: 2
+[código de salida: 0]
+
+=== Persistencia: reinicio del servidor MySQL  (2026-11-25 12:21:37)
+$ # equivalente a 'docker compose down && up -d' (Docker no disponible aquí)
+mysqladmin shutdown; mysqld_safe --user=mysql &
+mysql -ualumno -palumno123 -h127.0.0.1 biblioteca -e 'SELECT COUNT(*) FROM libros;'
+COUNT(*)
+2
+[código de salida: 0]
+

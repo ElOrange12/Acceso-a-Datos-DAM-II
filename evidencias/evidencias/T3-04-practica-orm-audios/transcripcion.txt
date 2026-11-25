@@ -1,0 +1,26 @@
+EJERCICIO: Práctica guardar audios con SQLAlchemy
+Carpeta: ~/t3/practica-orm-audios
+
+=== Versión de FFmpeg  (2026-11-25 12:22:53)
+$ ffmpeg -version | head -1
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+[código de salida: 0]
+
+=== Ejecución de practica.py (CRUD)  (2026-11-25 12:22:54)
+$ python practica.py
+1 llamada.mp3 8000 8 30.5
+2 cancion_cd.mp3 44100 16 210.0
+1 llamada.mp3 45.0
+[código de salida: 0]
+
+=== Ejecución de guardar_mp3.py (MP3 real)  (2026-11-25 12:22:54)
+$ python guardar_mp3.py
+1 0802.mp3 44100 16 166.4
+[código de salida: 0]
+
+=== Comprobación de la base SQLite  (2026-11-25 12:22:54)
+$ sqlite3 -header audios.db 'SELECT * FROM audios;'
+id|nombre|frecuencia|bits|duracion
+1|0802.mp3|44100|16|166.4
+[código de salida: 0]
+

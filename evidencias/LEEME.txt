@@ -1,0 +1,9 @@
+EVIDENCIAS DE EJECUCION - Acceso a Datos DAM II (temas 2 y 3)
+Generadas el 2026-11-25 en un entorno Linux de pruebas (no en tu equipo ni en tu VM).
+
+evidencias/<ejercicio>/  -> capturas PNG de cada paso + transcripcion.txt con la salida literal
+correcciones/            -> guiones mongosh corregidos (los originales fallan; ver informe)
+
+Entorno: MariaDB 10.11 (en lugar de MySQL), FerretDB 1.24 con backend SQLite (compatible con el
+protocolo de MongoDB, en lugar de MongoDB real), mongosh 2.14.3, Python 3.13, Node 22.
+Docker no estaba disponible: la persistencia de biblioteca-en-red se comprobo reiniciando MariaDB.

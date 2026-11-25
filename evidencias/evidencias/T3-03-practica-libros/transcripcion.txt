@@ -1,0 +1,19 @@
+EJERCICIO: Práctica ORM de libros (SQLAlchemy + SQLite)
+Carpeta: ~/t3/practica-libros
+
+=== Ejecución de biblioteca.py  (2026-11-25 12:21:40)
+$ python biblioteca.py
+Don Quijote de la Mancha - Miguel de Cervantes
+Don Quijote de la Mancha 1250
+La casa de los espíritus 480
+1 Don Quijote de la Mancha 1250
+3 Platero y yo 150
+[código de salida: 0]
+
+=== Comprobación de la base SQLite  (2026-11-25 12:21:40)
+$ sqlite3 -header biblioteca.db 'SELECT * FROM libros;'
+id|titulo|autor|paginas
+1|Don Quijote de la Mancha|Miguel de Cervantes|1250
+3|Platero y yo|Juan Ramón Jiménez|150
+[código de salida: 0]
+

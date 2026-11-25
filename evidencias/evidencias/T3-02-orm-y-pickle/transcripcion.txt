@@ -1,0 +1,55 @@
+EJERCICIO: ORM y pickle: copia de seguridad y restauración
+Carpeta: ~/t3/orm-y-pickle
+
+=== modelos.py (crea la tabla)  (2026-11-25 12:21:38)
+$ python modelos.py
+
+[código de salida: 0]
+
+=== crear.py  (2026-11-25 12:21:38)
+$ python crear.py
+Clientes guardados
+[código de salida: 0]
+
+=== leer.py (antes de borrar)  (2026-11-25 12:21:38)
+$ python leer.py
+Clientes en la base de datos: 3
+1 Ana Valencia
+2 Luis Madrid
+3 Marta Valencia
+[código de salida: 0]
+
+=== copia.py (guarda copia con pickle)  (2026-11-25 12:21:39)
+$ python copia.py
+Copia guardada con 3 clientes
+[código de salida: 0]
+
+=== borrar_todo.py  (2026-11-25 12:21:39)
+$ python borrar_todo.py
+Se han borrado todos los clientes
+[código de salida: 0]
+
+=== leer.py (después de borrar)  (2026-11-25 12:21:39)
+$ python leer.py
+Clientes en la base de datos: 0
+[código de salida: 0]
+
+=== restaurar.py (carga copia.bin)  (2026-11-25 12:21:40)
+$ python restaurar.py
+Restaurados 3 clientes
+[código de salida: 0]
+
+=== leer.py (tras restaurar)  (2026-11-25 12:21:40)
+$ python leer.py
+Clientes en la base de datos: 3
+1 Ana Valencia
+2 Luis Madrid
+3 Marta Valencia
+[código de salida: 0]
+
+=== Archivos generados  (2026-11-25 12:21:40)
+$ ls -l tienda.db copia.bin
+-rw-r--r-- 1 root root  106 Nov 25 12:21 copia.bin
+-rw-r--r-- 1 root root 8192 Nov 25 12:21 tienda.db
+[código de salida: 0]
+

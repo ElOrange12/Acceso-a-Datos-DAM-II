@@ -1,0 +1,201 @@
+EJERCICIO: Práctica MongoDB y Node.js (biblioteca)
+Carpeta: ~/t2/practica-biblioteca
+
+=== Instalación de dependencias (npm install)  (2026-11-25 12:22:49)
+$ npm install
+
+added 12 packages, and audited 13 packages in 597ms
+
+found 0 vulnerabilities
+[código de salida: 0]
+
+=== Parte A tal cual se entregó (guion original)  (2026-11-25 12:22:50)
+$ mongosh --file mongosh/parte-a.js
+TypeError: biblioteca.collection is not a function
+[código de salida: 1]
+
+=== Con solo el primer arreglo (.getCollection) falla el ejercicio 10  (2026-11-25 12:22:50)
+$ mongosh --file mongosh/parte-a.paso1.js   # solo .collection -> .getCollection
+  }
+]
+Ejercicio 10 · Ejemplares de El Quijote:
+MongoServerError: projection expression { titulo: 1, ejemplares: 1 } is not supported
+[código de salida: 1]
+
+=== Correcciones aplicadas al guion  (2026-11-25 12:22:50)
+$ diff mongosh/parte-a.js mongosh/parte-a.corregido.js
+4c4
+< const libros = biblioteca.collection("libros");
+---
+> const libros = biblioteca.getCollection("libros");
+79c79
+< printjson(libros.findOne({ titulo: "El Quijote" }, { projection: { titulo: 1, ejemplares: 1 } }));
+---
+> printjson(libros.findOne({ titulo: "El Quijote" }, { titulo: 1, ejemplares: 1 }));
+[código de salida: 0]
+
+=== Parte A con el guion corregido  (2026-11-25 12:22:51)
+$ mongosh --file mongosh/parte-a.corregido.js
+Ejercicio 4 · Total: 6
+Ejercicio 5 · Novelas: 3
+Ejercicio 6 · Publicados después de 2000:
+[
+  {
+    _id: ObjectId('6b06c50bcbfe392e46bd05f0'),
+    titulo: 'La sombra del viento',
+    autor: 'Carlos Ruiz Zafón',
+    anio: 2001,
+    genero: 'misterio',
+    paginas: 576,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6b06c50bcbfe392e46bd05f2'),
+    titulo: 'Patria',
+    autor: 'Fernando Aramburu',
+    anio: 2016,
+    genero: 'novela',
+    paginas: 648,
+    disponible: true
+  }
+]
+Ejercicio 7 · Título y autor, por año:
+[
+  {
+    titulo: 'El Quijote',
+    autor: 'Miguel de Cervantes'
+  },
+  {
+    titulo: 'El principito',
+    autor: 'Antoine de Saint-Exupéry'
+  },
+  {
+    titulo: 'Cien años de soledad',
+    autor: 'Gabriel García Márquez'
+  },
+  {
+    titulo: 'Harry Potter y la piedra filosofal',
+    autor: 'J. K. Rowling'
+  },
+  {
+    titulo: 'La sombra del viento',
+    autor: 'Carlos Ruiz Zafón'
+  },
+  {
+    titulo: 'Patria',
+    autor: 'Fernando Aramburu'
+  }
+]
+Ejercicio 8 · Menos de 300 páginas:
+[
+  {
+    titulo: 'El principito',
+    paginas: 96
+  },
+  {
+    titulo: 'Harry Potter y la piedra filosofal',
+    paginas: 256
+  }
+]
+Ejercicio 9 · No disponibles:
+[
+  {
+    titulo: 'El principito'
+  }
+]
+Ejercicio 10 · Ejemplares de El Quijote:
+{
+  _id: ObjectId('6b06c50bcbfe392e46bd05ee'),
+  titulo: 'El Quijote',
+  ejemplares: 3
+}
+Ejercicio 11 · Total tras retirar Harry Potter: 5
+[código de salida: 0]
+
+=== Estado de la colección tras la Parte A  (2026-11-25 12:22:52)
+$ mongosh --eval 'db.getSiblingDB("biblioteca").libros.find({}, {titulo:1, disponible:1, ejemplares:1, _id:0})'
+[
+  {
+    titulo: 'El Quijote',
+    disponible: true,
+    ejemplares: 3
+  },
+  {
+    titulo: 'Cien años de soledad',
+    disponible: true,
+    ejemplares: 1
+  },
+  {
+    titulo: 'La sombra del viento',
+    disponible: true,
+    ejemplares: 1
+  },
+  {
+    titulo: 'El principito',
+    disponible: false,
+    ejemplares: 1
+  },
+  {
+    titulo: 'Patria',
+    disponible: true,
+    ejemplares: 1
+  }
+]
+[código de salida: 0]
+
+=== Parte B: conexion.js  (2026-11-25 12:22:52)
+$ node conexion.js
+Conexión correcta
+Número de libros: 5
+[código de salida: 0]
+
+=== Parte B: listar.js  (2026-11-25 12:22:53)
+$ node listar.js
+El Quijote - Miguel de Cervantes (1605)
+El principito - Antoine de Saint-Exupéry (1943)
+Cien años de soledad - Gabriel García Márquez (1967)
+La sombra del viento - Carlos Ruiz Zafón (2001)
+Patria - Fernando Aramburu (2016)
+[código de salida: 0]
+
+=== Parte B: insertar.js  (2026-11-25 12:22:53)
+$ node insertar.js
+Libro insertado con id: 6b06c50ddd9b1b9babda3ede
+[código de salida: 0]
+
+=== Parte B: buscar.js (género novela)  (2026-11-25 12:22:53)
+$ node buscar.js
+Libros del género novela:
+El Quijote
+Cien años de soledad
+Patria
+Nada
+Encontrados: 4
+[código de salida: 0]
+
+=== Parte B: buscar.js (género infantil)  (2026-11-25 12:22:53)
+$ # cambiar genero a "infantil" en buscar.js
+node buscar.js
+Libros del género infantil:
+El principito
+Encontrados: 1
+[código de salida: 0]
+
+=== Parte B: prestar.js  (2026-11-25 12:22:53)
+$ node prestar.js
+Documentos modificados: 1
+Libros disponibles:
+El Quijote
+Cien años de soledad
+Patria
+Nada
+[código de salida: 0]
+
+=== Parte B: estadisticas.js  (2026-11-25 12:22:53)
+$ node estadisticas.js
+Total de libros: 6
+Disponibles: 4
+Prestados: 2
+Más páginas: El Quijote (1250)
+[código de salida: 0]
+

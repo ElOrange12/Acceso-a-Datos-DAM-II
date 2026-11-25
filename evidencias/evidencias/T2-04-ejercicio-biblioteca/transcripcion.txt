@@ -1,0 +1,49 @@
+EJERCICIO: Biblioteca con Python y MySQL (conexión, pool, errores, estructura)
+Carpeta: ~/t2/ejercicio-biblioteca
+
+=== Preparación: crear_biblioteca.sql  (2026-11-25 12:21:31)
+$ mysql < crear_biblioteca.sql
+
+[código de salida: 0]
+
+=== Ejercicio 1: conexión  (2026-11-25 12:21:31)
+$ python 1_conexion.py
+¿Conectado? True
+Base de datos: biblioteca
+Usuario conectado: lector@localhost
+¿Conectado? False
+[código de salida: 0]
+
+=== Ejercicio 2: pool de conexiones  (2026-11-25 12:21:31)
+$ python 2_pool.py
+Petición 1 -> sesión 28
+Petición 2 -> sesión 29
+Petición 3 -> sesión 30
+Petición 4 -> sesión 28
+Petición 5 -> sesión 29
+Petición 6 -> sesión 30
+[código de salida: 0]
+
+=== Ejercicio 3: gestión de errores  (2026-11-25 12:21:31)
+$ python 3_errores.py
+Error al conectar: 1045 Access denied for user 'lector'@'localhost' (using password: YES)
+Error en la sentencia: 1146 Table 'biblioteca.revistas' doesn't exist
+[código de salida: 0]
+
+=== Ejercicio 4: estructura (CREATE/ALTER/DROP)  (2026-11-25 12:21:31)
+$ python 4_estructura.py
+Tabla socios creada y modificada
+Tabla: libros
+Tabla: socios
+Columna: id | Tipo: int(11)
+Columna: nombre | Tipo: varchar(50)
+Columna: telefono | Tipo: varchar(15)
+Tabla socios borrada
+[código de salida: 0]
+
+=== Comprobación: la tabla socios ya no existe  (2026-11-25 12:21:31)
+$ mysql -e 'USE biblioteca; SHOW TABLES;'
+Tables_in_biblioteca
+libros
+[código de salida: 0]
+
