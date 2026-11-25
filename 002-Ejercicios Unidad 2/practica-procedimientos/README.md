@@ -19,6 +19,6 @@ La salida reproduce el orden del enunciado: listado, búsqueda por autor, recuen
 
 Para volver al estado inicial, ejecuta de nuevo `preparar_biblioteca.sql` en Workbench antes de correr el programa.
 
-## Mockup
+## Evidencias
 
-`evidencias_simuladas/resultado.svg` muestra la salida prevista y lleva la marca **SIMULACIÓN**. Este entorno no dispone de MySQL Workbench ni de un servidor MySQL para ejecutar las rutinas; ejecuta el paquete en tu instalación para obtener capturas reales.
+Guarda en `evidencias/` capturas de las consultas y llamadas a procedimientos realizadas en MySQL.

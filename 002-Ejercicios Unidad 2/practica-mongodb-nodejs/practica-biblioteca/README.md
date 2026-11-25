@@ -39,4 +39,4 @@ Resultados previstos al completar la secuencia: la colección tiene seis libros;
 
 ## Entrega
 
-El enunciado también pide una VM Win10-MongoDB y capturas de cada ejercicio, incluido `winver`, versiones de Node/npm/MongoDB, resultados de mongosh, programas Node y MongoDB Compass. Este paquete no crea la VM ni contiene capturas reales. Los mockups de `evidencias_simuladas` están marcados como simulación. Para entregar las evidencias auténticas, ejecuta el proyecto dentro de VirtualBox, toma las capturas allí y copia la carpeta a `entrega-mongodb` sin `node_modules`.
+El enunciado también pide capturas de cada ejercicio: `winver`, versiones de Node/npm/MongoDB, resultados de mongosh, programas Node y MongoDB Compass. Guarda las capturas de tu ejecución en `evidencias/`. Para entregar, copia la carpeta a `entrega-mongodb` sin `node_modules`.

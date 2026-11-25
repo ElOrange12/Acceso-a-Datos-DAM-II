@@ -32,4 +32,4 @@ Antes de borrar, `leer.py` muestra los tres clientes. La siguiente ejecución mu
 
 `copia.py` y `restaurar.py` abren los archivos con `with` para cerrarlos correctamente. La restauración presupone que `copia.bin` procede de este ejercicio y no está manipulado.
 
-La carpeta `evidencias_simuladas` contiene una imagen de terminal ilustrativa marcada como **SIMULACIÓN**; no es una captura de Visual Studio Code ejecutándose en el ordenador del alumno.
+Guarda capturas de `leer.py` antes del borrado, después del borrado y tras restaurar los clientes en `evidencias/`.

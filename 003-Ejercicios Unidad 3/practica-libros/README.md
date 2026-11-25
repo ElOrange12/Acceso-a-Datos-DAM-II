@@ -30,4 +30,4 @@ SQLAlchemy crea `biblioteca.db` en la carpeta actual. Como el enunciado vuelve a
 - Las consultas usan `get` y `select` y el ORM genera las instrucciones SQL.
 - Se actualiza Platero y yo y se elimina La casa de los espíritus.
 
-La carpeta `evidencias_simuladas` contiene una imagen ilustrativa basada en la salida real del script y marcada como **SIMULACIÓN**. No es una captura de una ejecución en el ordenador del alumno.
+Guarda en `evidencias/` una captura de la ejecución de `biblioteca.py`.

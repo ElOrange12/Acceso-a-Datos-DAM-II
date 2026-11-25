@@ -44,4 +44,4 @@ El script también borra y vuelve a crear la tabla antes de registrar el MP3. Po
 
 ## Evidencias visuales
 
-`evidencias_simuladas` incluye mockups de las salidas de ambos programas, marcados **SIMULACIÓN**. Las salidas se basan en la ejecución local de los scripts, pero las imágenes no son capturas de pantalla del terminal.
+Guarda en `evidencias/` capturas de las salidas de `practica.py` y `guardar_mp3.py`.

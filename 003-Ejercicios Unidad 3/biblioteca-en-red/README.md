@@ -91,6 +91,6 @@ Los contenedores se recrean y los datos permanecen porque `down` conserva los vo
 
 El enunciado pide comprobar pasos que dependen de la máquina virtual y de la red real. Para acreditar tu ejecución, guarda capturas propias de: IP de Ubuntu y prueba SSH; `docker ps` con ambos contenedores; salida CRUD de Node.js; consulta MongoDB dentro del contenedor; salida de SQLAlchemy y filas MySQL; recuento antes y después del rollback; y recuento tras recrear contenedores.
 
-La carpeta `evidencias_simuladas` contiene ejemplos visuales de algunas salidas esperadas. Todas las imágenes llevan una marca visible de **SIMULACIÓN**; son mockups para orientar la comprobación y no acreditan que el laboratorio se haya ejecutado.
+Guarda en `evidencias/` capturas de la IP y conexión SSH, `docker ps`, las salidas de Node.js y SQLAlchemy, las consultas de MongoDB y MySQL, el resultado del rollback y la persistencia tras reiniciar los contenedores.
 
 Al terminar el laboratorio, ejecuta `docker compose down` en Ubuntu y luego `sudo poweroff`.

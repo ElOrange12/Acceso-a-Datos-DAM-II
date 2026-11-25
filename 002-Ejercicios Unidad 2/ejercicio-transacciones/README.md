@@ -24,6 +24,6 @@ El programa primero reproduce el fallo sin transacción: la resta del saldo de L
 
 El programa ejecuta las partes del ejercicio en un solo recorrido. Vuelve a ejecutar `preparar_taquilla.sql` antes de repetirlo, ya que cada corrida altera los saldos y añade una entrada.
 
-## Captura de ejemplo
+## Evidencias
 
-`evidencias_simuladas/resultado.svg` ilustra el resultado esperado y está marcada como **SIMULACIÓN**. No es una captura de una ejecución real en XAMPP; debes ejecutar el programa en tu entorno para obtener evidencia real.
+Guarda una captura de la ejecución que muestre el comportamiento sin transacción y con rollback.

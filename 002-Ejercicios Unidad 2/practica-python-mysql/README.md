@@ -11,4 +11,4 @@ Script completo `practica.py` para crear la base de datos `tienda`, crear y rell
 
 El programa recrea la tabla `productos` en cada ejecución, por lo que elimina primero los datos anteriores. La base de datos completa no se elimina. La salida de las bases internas de MySQL puede variar entre instalaciones; debe aparecer `tienda`.
 
-La carpeta `evidencias_simuladas` incluye un mockup con la salida final esperada, marcado como **SIMULACIÓN**. No se ejecutó contra MySQL en este entorno; necesitarás tu servidor local para obtener una captura real.
+Guarda en `evidencias/` una captura de la salida de `practica.py` ejecutada contra tu servidor MySQL.

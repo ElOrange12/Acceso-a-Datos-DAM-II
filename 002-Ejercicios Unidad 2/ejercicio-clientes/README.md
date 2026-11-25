@@ -18,6 +18,6 @@ Comprueba que MySQL está activo y que la base de datos existe. Ejecuta los tres
 
 Al terminar, vuelve a consultar la tabla: Ana ya no debe aparecer y las demás filas deben seguir igual. Si vuelves a ejecutar la inserción tras borrar a Ana, `AUTO_INCREMENT` puede asignar otro identificador.
 
-## Evidencia ilustrativa
+## Evidencias
 
-`evidencias_simuladas/resultado.svg` representa la fila tras inserción, actualización y eliminación. Lleva la marca **SIMULACIÓN**; no es una captura de MySQL ni una consulta ejecutada en tu servidor.
+Guarda en `evidencias/` capturas de las operaciones de inserción, actualización y eliminación.

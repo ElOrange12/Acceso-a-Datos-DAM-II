@@ -40,4 +40,4 @@ robocopy %USERPROFILE%\Desktop\agenda-contactos Z:\agenda-contactos /E /XD node_
 
 ## Entrega y evidencias
 
-El enunciado pide capturas de los ejercicios y entregar la carpeta Node.js sin `node_modules`. `evidencias_simuladas/resultado.svg` es un mockup marcado como **SIMULACIÓN**, no una captura real. La guía de la práctica incluye el comando Robocopy para copiar el proyecto a la carpeta compartida excluyendo `node_modules`.
+El enunciado pide capturas de los ejercicios y entregar la carpeta Node.js sin `node_modules`. Guarda las capturas de ejecución en `evidencias/`. La guía de la práctica incluye el comando Robocopy para copiar el proyecto a la carpeta compartida excluyendo `node_modules`.
